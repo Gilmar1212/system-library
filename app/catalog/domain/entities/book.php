@@ -12,9 +12,9 @@ abstract class Book
 
     abstract protected function save($title,$author,$isbn,$gender);
 
-    abstract protected function updateBook(Book $book);
+    abstract protected function update($id, $title,$author,$isbn,$gender);
 
-    abstract protected function deleteBook(Book $book);
+    abstract protected function delete():void;
     
     public function __construct(){}
     
