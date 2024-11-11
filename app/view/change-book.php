@@ -1,4 +1,4 @@
-<?php include("../catalog/infrastructure/adapters/usecases/bookUseCase.php") ?>
+<?php include("../catalog/domain/repositories/bookRepository.php") ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 

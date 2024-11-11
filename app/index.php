@@ -6,7 +6,7 @@
     <title>Books rent </title>
 </head>
 <body>
-    <form action="catalog/infrastructure/adapters/usecases/bookUseCase.php" method="POST">
+    <form action="process.php" method="POST">
         <input type="text" name="title" placeholder="Title" required>
         <input type="text" name="author" placeholder="Author" required>
         <input type="text" name="isbn" placeholder="ISBN" required>

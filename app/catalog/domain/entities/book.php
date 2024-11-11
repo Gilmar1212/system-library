@@ -1,47 +1,67 @@
 <?php
 namespace app\catalog\domain\entities;
 
-abstract class Book
+class Book
 {
-    
     private $id;
     private $title;
     private $author;
     private $isbn;
     private $gender;
 
-    abstract protected function save($title,$author,$isbn,$gender);
-
-    abstract protected function update($id, $title,$author,$isbn,$gender);
-
-    abstract protected function delete():void;
-    
-    public function __construct(){}
-    
-    public function getTitleBook(){
-       return $this->title;
+    public function __construct($id, $title, $author, $isbn, $gender)
+    {
+        $this->id = $id;
+        $this->title = $title;
+        $this->author = $author;
+        $this->isbn = $isbn;
+        $this->gender = $gender;
     }
-    public function setTitleBook($title){
-        return $this->title = $title;
+
+    public function getId()
+    {
+        return $this->id;
     }
-    public function getAuthorBook(){
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function getAuthor()
+    {
         return $this->author;
-     }
-     public function setAuthorBook($author){
-         return $this->author = $author;
-     }
-     public function getIsbnBook(){
-        return $this->isbn;
-     }
-     public function setIsbnBook($isbn){
-         return $this->isbn = $isbn;
-     }
-     public function getGenderBook(){
-        return $this->gender;
-     }
-     public function setGenderBook($gender){
-         return $this->gender = $gender;
-     }
-    
-}
+    }
 
+    public function setAuthor($author)
+    {
+        $this->author = $author;
+    }
+
+    public function getIsbn()
+    {
+        return $this->isbn;
+    }
+
+    public function setIsbn($isbn)
+    {
+        // Aqui você pode adicionar validação do ISBN
+        $this->isbn = $isbn;
+    }
+
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+}
