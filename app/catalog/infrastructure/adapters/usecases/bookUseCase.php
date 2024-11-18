@@ -1,5 +1,5 @@
 <?php
-namespace app\catalog\infrastructure\adapters\usecases\usecases;
+namespace app\catalog\infrastructure\adapters\usecases;
 
 use app\catalog\domain\repositories\BookRepository;
 use app\catalog\domain\entities\Book;
@@ -23,6 +23,11 @@ class BookUseCase
     {
         $book = new Book($id, $title, $author, $isbn, $gender);
         return $this->repository->update($book);
+    }
+    public function delete($id): bool
+    {
+        // Chama diretamente o método de exclusão do repositório
+        return $this->repository->delete($id);
     }
 
     public function getBooks(): array

@@ -7,7 +7,7 @@
     <title>Books change </title>
 </head>
 <body>
-    <form action="../catalog/infrastructure/adapters/usecases/bookUseCase.php?id=<?=$filter_id?>" method="POST">
+    <form action="../book-process.php?id=<?=$filter_id?>" method="POST">
         <input type="text" name="titleUpdate" placeholder="Title">
         <input type="text" name="authorUpdate" placeholder="Author">
         <input type="text" name="isbnUpdate" placeholder="ISBN">

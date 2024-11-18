@@ -24,21 +24,30 @@ class BookRepository implements BookInterface
     public function save(Book $book): bool
     {
         $stmt = $this->conn->prepare("INSERT INTO tbl_book (title, author, isbn, gender) VALUES (:title, :author, :isbn, :gender)");
-        $stmt->bindParam(":title", $book->getTitle());
-        $stmt->bindParam(":author", $book->getAuthor());
-        $stmt->bindParam(":isbn", $book->getIsbn());
-        $stmt->bindParam(":gender", $book->getGender());
+        $title = $book->getTitle();
+        $author = $book->getAuthor();
+        $isbn = $book->getIsbn();
+        $gender = $book->getGender();
+        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":author", $author);
+        $stmt->bindParam(":isbn", $isbn);
+        $stmt->bindParam(":gender", $gender);
         return $stmt->execute();
     }
 
     public function update(Book $book): bool
     {
         $stmt = $this->conn->prepare("UPDATE tbl_book SET title = :title, author = :author, isbn = :isbn, gender = :gender WHERE id = :id");
-        $stmt->bindParam(":id", $book->getId());
-        $stmt->bindParam(":title", $book->getTitle());
-        $stmt->bindParam(":author", $book->getAuthor());
-        $stmt->bindParam(":isbn", $book->getIsbn());
-        $stmt->bindParam(":gender", $book->getGender());
+        $id = $book->getId();
+        $title = $book->getTitle();
+        $author = $book->getAuthor();
+        $isbn = $book->getIsbn();
+        $gender = $book->getGender();
+        $stmt->bindParam(":id", $id);
+        $stmt->bindParam(":title", $title);
+        $stmt->bindParam(":author", $author);
+        $stmt->bindParam(":isbn", $isbn);
+        $stmt->bindParam(":gender", $gender);
         return $stmt->execute();
     }
 
